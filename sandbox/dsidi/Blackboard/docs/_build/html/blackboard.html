@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Blackboard &mdash; The University of Arizona B3 Project 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="The University of Arizona B3 Project 0.1 documentation" href="index.html" />
+    <link rel="prev" title="Draconian Documentation Guidelines" href="DOCUMENTATION_GUIDELINES.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="DOCUMENTATION_GUIDELINES.html" title="Draconian Documentation Guidelines"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">The University of Arizona B3 Project 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-blackboard">
+<span id="blackboard"></span><h1>Blackboard<a class="headerlink" href="#module-blackboard" title="Permalink to this headline">¶</a></h1>
+<dl class="data">
+<dt id="blackboard.AGENDA">
+<tt class="descclassname">blackboard.</tt><tt class="descname">AGENDA</tt><em class="property"> = []</em><a class="headerlink" href="#blackboard.AGENDA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contains the list of activated KSs awaiting execution.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="blackboard.BB_object">
+<em class="property">class </em><tt class="descclassname">blackboard.</tt><tt class="descname">BB_object</tt><big>(</big><em>name</em>, <em>data</em><big>)</big><a class="headerlink" href="#blackboard.BB_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contains the name and data of a blackboard object.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="blackboard.BLACKBOARD">
+<tt class="descclassname">blackboard.</tt><tt class="descname">BLACKBOARD</tt><em class="property"> = {}</em><a class="headerlink" href="#blackboard.BLACKBOARD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contains the blackboard database.
+Version 1: simple dictionary of blackboard objects stored by name</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="blackboard.Base_Instance">
+<em class="property">class </em><tt class="descclassname">blackboard.</tt><tt class="descname">Base_Instance</tt><big>(</big><em>name=None</em><big>)</big><a class="headerlink" href="#blackboard.Base_Instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>The top-level class for any id&#8217;d and named object 
+Any child class will have a class attribute</p>
+<dl class="classmethod">
+<dt id="blackboard.Base_Instance.add_instance">
+<em class="property">classmethod </em><tt class="descname">add_instance</tt><big>(</big><em>instance_class</em>, <em>instance</em><big>)</big><a class="headerlink" href="#blackboard.Base_Instance.add_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add class instance to instances and instances_by_name</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="blackboard.Base_Instance.get_instance_classes">
+<em class="property">static </em><tt class="descname">get_instance_classes</tt><big>(</big><big>)</big><a class="headerlink" href="#blackboard.Base_Instance.get_instance_classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor that should be used to get Base_Instance.instance_classes</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="blackboard.Base_Instance.get_instance_id_counter">
+<em class="property">classmethod </em><tt class="descname">get_instance_id_counter</tt><big>(</big><em>instance_class</em><big>)</big><a class="headerlink" href="#blackboard.Base_Instance.get_instance_id_counter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="blackboard.Base_Instance.get_new_instance_id">
+<em class="property">classmethod </em><tt class="descname">get_new_instance_id</tt><big>(</big><em>instance_class</em><big>)</big><a class="headerlink" href="#blackboard.Base_Instance.get_new_instance_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="blackboard.Base_Instance.instance_classes">
+<tt class="descname">instance_classes</tt><em class="property"> = set([])</em><a class="headerlink" href="#blackboard.Base_Instance.instance_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="blackboard.Base_Instance.instance_id_counter">
+<tt class="descname">instance_id_counter</tt><em class="property"> = 0</em><a class="headerlink" href="#blackboard.Base_Instance.instance_id_counter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="blackboard.Base_Instance.instances">
+<tt class="descname">instances</tt><em class="property"> = {}</em><a class="headerlink" href="#blackboard.Base_Instance.instances" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="blackboard.Base_Instance.instances_by_name">
+<tt class="descname">instances_by_name</tt><em class="property"> = {}</em><a class="headerlink" href="#blackboard.Base_Instance.instances_by_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="blackboard.Base_Instance.remove">
+<tt class="descname">remove</tt><big>(</big><big>)</big><a class="headerlink" href="#blackboard.Base_Instance.remove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="blackboard.Base_Instance.remove_all_instances">
+<em class="property">classmethod </em><tt class="descname">remove_all_instances</tt><big>(</big><em>instance_class</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#blackboard.Base_Instance.remove_all_instances" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="blackboard.Base_Instance.remove_instance">
+<em class="property">classmethod </em><tt class="descname">remove_instance</tt><big>(</big><em>instance_class</em>, <em>instance</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#blackboard.Base_Instance.remove_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove class instances from instances and instances_by_name
+NOTE: does not delete the instance itself, it is just no longer globally stored</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="blackboard.Base_Instance.reset_instance_id_counter">
+<em class="property">classmethod </em><tt class="descname">reset_instance_id_counter</tt><big>(</big><em>instance_class</em>, <em>val=0</em><big>)</big><a class="headerlink" href="#blackboard.Base_Instance.reset_instance_id_counter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="blackboard.Blackboard">
+<em class="property">class </em><tt class="descclassname">blackboard.</tt><tt class="descname">Blackboard</tt><a class="headerlink" href="#blackboard.Blackboard" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="blackboard.Blackboard.add_space">
+<tt class="descname">add_space</tt><big>(</big><em>space</em><big>)</big><a class="headerlink" href="#blackboard.Blackboard.add_space" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="blackboard.Blackboard.describe">
+<tt class="descname">describe</tt><big>(</big><big>)</big><a class="headerlink" href="#blackboard.Blackboard.describe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="blackboard.CREATION_EVENT_KSS">
+<tt class="descclassname">blackboard.</tt><tt class="descname">CREATION_EVENT_KSS</tt><em class="property"> = [&lt;blackboard.Compute_Squares_KS object at 0x2e08610&gt;, &lt;blackboard.Generate_Integers_KS object at 0x2e08710&gt;, &lt;blackboard.Print_Squares_KS object at 0x2e08790&gt;]</em><a class="headerlink" href="#blackboard.CREATION_EVENT_KSS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contains KS specifications for all KSs that are interested in
+blackboard-object creation events
+(which is the only type of events currently supported).
+The define_creation_ks macro manages this list.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="blackboard.Compute_Squares_KS">
+<em class="property">class </em><tt class="descclassname">blackboard.</tt><tt class="descname">Compute_Squares_KS</tt><a class="headerlink" href="#blackboard.Compute_Squares_KS" title="Permalink to this definition">¶</a></dt>
+<dd><p>KS that computes the square of its &#8216;bb_obj&#8217; argument.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="blackboard.EVENTS">
+<tt class="descclassname">blackboard.</tt><tt class="descname">EVENTS</tt><em class="property"> = []</em><a class="headerlink" href="#blackboard.EVENTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contains the events generated by each KSA execution.
+The events are buffered until execution of the KSA is completed.
+Then the events are processed by the control components.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="blackboard.Generate_Integers_KS">
+<em class="property">class </em><tt class="descclassname">blackboard.</tt><tt class="descname">Generate_Integers_KS</tt><a class="headerlink" href="#blackboard.Generate_Integers_KS" title="Permalink to this definition">¶</a></dt>
+<dd><p>KS that creates new Integer_objects with a value that is 1 larger
+than its &#8216;bb_obj&#8217; argument.  Creation stops when the value exceeds 
+STOP_VALUE.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="blackboard.Integer_object">
+<em class="property">class </em><tt class="descclassname">blackboard.</tt><tt class="descname">Integer_object</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#blackboard.Integer_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>A blackboard object containing a generated integer.</p>
+<dl class="attribute">
+<dt id="blackboard.Integer_object.type_name">
+<tt class="descname">type_name</tt><em class="property"> = 'Integer_object'</em><a class="headerlink" href="#blackboard.Integer_object.type_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="blackboard.KS_spec">
+<em class="property">class </em><tt class="descclassname">blackboard.</tt><tt class="descname">KS_spec</tt><big>(</big><em>ks_type_name</em>, <em>object_types</em>, <em>ks_function</em><big>)</big><a class="headerlink" href="#blackboard.KS_spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contains the information about a KS needed by the control machinery.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>object_types</strong> (<em>list</em>) &#8211; object types of interest</li>
+<li><strong>ks_function</strong> (<em>str</em>) &#8211; name of the function implementing the KS</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="blackboard.Print_Squares_KS">
+<em class="property">class </em><tt class="descclassname">blackboard.</tt><tt class="descname">Print_Squares_KS</tt><a class="headerlink" href="#blackboard.Print_Squares_KS" title="Permalink to this definition">¶</a></dt>
+<dd><p>KS that prints the value of the created Square_object (contained
+in the &#8216;bb_obj&#8217; argument).</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="blackboard.Square_object">
+<em class="property">class </em><tt class="descclassname">blackboard.</tt><tt class="descname">Square_object</tt><big>(</big><em>value</em>, <em>integer</em><big>)</big><a class="headerlink" href="#blackboard.Square_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>A blackboard object containing a squared integer.</p>
+<dl class="attribute">
+<dt id="blackboard.Square_object.type_name">
+<tt class="descname">type_name</tt><em class="property"> = 'Square_object'</em><a class="headerlink" href="#blackboard.Square_object.type_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="blackboard.Standard_Space_Instance">
+<em class="property">class </em><tt class="descclassname">blackboard.</tt><tt class="descname">Standard_Space_Instance</tt><big>(</big><em>name=None</em><big>)</big><a class="headerlink" href="#blackboard.Standard_Space_Instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="blackboard.Standard_Unit_Instance">
+<em class="property">class </em><tt class="descclassname">blackboard.</tt><tt class="descname">Standard_Unit_Instance</tt><big>(</big><em>name=None</em>, <em>space_instances=None</em><big>)</big><a class="headerlink" href="#blackboard.Standard_Unit_Instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>The base class for blackboard Units - any object that can be placed on a blackboard space
+(the term &#8216;units&#8217; used so as to not be confused with general python &#8216;objects&#8217;)</p>
+<dl class="method">
+<dt id="blackboard.Standard_Unit_Instance.describe">
+<tt class="descname">describe</tt><big>(</big><big>)</big><a class="headerlink" href="#blackboard.Standard_Unit_Instance.describe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="blackboard.TRACE_LEVEL">
+<tt class="descclassname">blackboard.</tt><tt class="descname">TRACE_LEVEL</tt><em class="property"> = 4</em><a class="headerlink" href="#blackboard.TRACE_LEVEL" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current trace level.
+Trace levels from 0 (none) to 3 (highest) are supported.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blackboard.control_loop">
+<tt class="descclassname">blackboard.</tt><tt class="descname">control_loop</tt><big>(</big><big>)</big><a class="headerlink" href="#blackboard.control_loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>A trivial control loop.
+No opportunistic control is performed, simply LIFO stack (last-in, first-out) scheduling.
+The loop terminates when the agenda is empty.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blackboard.create_blackboard_repository">
+<tt class="descclassname">blackboard.</tt><tt class="descname">create_blackboard_repository</tt><big>(</big><big>)</big><a class="headerlink" href="#blackboard.create_blackboard_repository" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="blackboard.creation_event">
+<tt class="descclassname">blackboard.</tt><tt class="descname">creation_event</tt><big>(</big><em>bb_object</em><big>)</big><a class="headerlink" href="#blackboard.creation_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Control component code for processing a creation event.
+Determines which KSs are interested in the event and adds them to the agenda.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blackboard.delete_blackboard_repository">
+<tt class="descclassname">blackboard.</tt><tt class="descname">delete_blackboard_repository</tt><big>(</big><big>)</big><a class="headerlink" href="#blackboard.delete_blackboard_repository" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="blackboard.describe_blackboard_repository">
+<tt class="descclassname">blackboard.</tt><tt class="descname">describe_blackboard_repository</tt><big>(</big><big>)</big><a class="headerlink" href="#blackboard.describe_blackboard_repository" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="blackboard.gensym">
+<tt class="descclassname">blackboard.</tt><tt class="descname">gensym</tt><big>(</big><em>name='G'</em><big>)</big><a class="headerlink" href="#blackboard.gensym" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a generic name with a guaranteed unique name</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blackboard.get_bb_object">
+<tt class="descclassname">blackboard.</tt><tt class="descname">get_bb_object</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#blackboard.get_bb_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trivial retrieval of blackboard object by name.
+&#8216;Name&#8217; must be a string.</p>
+<p>Also, this _could_ be much more fancy kind of pattern-based lookup
+depending on the blackboard repository structure.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blackboard.get_gensym_counter">
+<tt class="descclassname">blackboard.</tt><tt class="descname">get_gensym_counter</tt><big>(</big><big>)</big><a class="headerlink" href="#blackboard.get_gensym_counter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor for gensym counter</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blackboard.get_instance_classes">
+<tt class="descclassname">blackboard.</tt><tt class="descname">get_instance_classes</tt><big>(</big><big>)</big><a class="headerlink" href="#blackboard.get_instance_classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Global interface to extract current Base_Instance classes with some instances</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blackboard.make_bb_object">
+<tt class="descclassname">blackboard.</tt><tt class="descname">make_bb_object</tt><big>(</big><em>name</em>, <em>data</em><big>)</big><a class="headerlink" href="#blackboard.make_bb_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes &#8216;object&#8217; a blackboard object with name &#8216;name&#8217; and signals a 
+creation event.  &#8216;Name&#8217; must be a string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; the name of the bb object</li>
+<li><strong>data</strong> (<em>str</em>) &#8211; the bb object&#8217;s data</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="blackboard.reset_bb_system">
+<tt class="descclassname">blackboard.</tt><tt class="descname">reset_bb_system</tt><big>(</big><big>)</big><a class="headerlink" href="#blackboard.reset_bb_system" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the system to the initial state.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blackboard.reset_gensym_counter">
+<tt class="descclassname">blackboard.</tt><tt class="descname">reset_gensym_counter</tt><big>(</big><em>val=0</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#blackboard.reset_gensym_counter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the gensym counter, optionally to val</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blackboard.run_application">
+<tt class="descclassname">blackboard.</tt><tt class="descname">run_application</tt><big>(</big><big>)</big><a class="headerlink" href="#blackboard.run_application" title="Permalink to this definition">¶</a></dt>
+<dd><p>The top-level application function that runs (and reruns) the simple
+BB application.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blackboard.signal_creation_event">
+<tt class="descclassname">blackboard.</tt><tt class="descname">signal_creation_event</tt><big>(</big><em>bb_object</em><big>)</big><a class="headerlink" href="#blackboard.signal_creation_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signals that &#8216;bb_object&#8217; has been created.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blackboard.test_bb">
+<tt class="descclassname">blackboard.</tt><tt class="descname">test_bb</tt><big>(</big><big>)</big><a class="headerlink" href="#blackboard.test_bb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="blackboard.test_standard_unit_instance_inheritance">
+<tt class="descclassname">blackboard.</tt><tt class="descname">test_standard_unit_instance_inheritance</tt><big>(</big><em>verbose=0</em><big>)</big><a class="headerlink" href="#blackboard.test_standard_unit_instance_inheritance" title="Permalink to this definition">¶</a></dt>
+<dd><p>A verbose test that assures we can subclass Standard_Unit_Instance and get 
+desired behavior w.r.t. storing object by id and name in child class
+NOTE: This also tests the gensym and Standard_Unit_Instance.instance_id_counter
+and related functions/methods</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blackboard.undefine_all_kss">
+<tt class="descclassname">blackboard.</tt><tt class="descname">undefine_all_kss</tt><big>(</big><big>)</big><a class="headerlink" href="#blackboard.undefine_all_kss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all KS definitions</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="DOCUMENTATION_GUIDELINES.html"
+                        title="previous chapter">Draconian Documentation Guidelines</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/blackboard.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="DOCUMENTATION_GUIDELINES.html" title="Draconian Documentation Guidelines"
+             >previous</a> |</li>
+        <li><a href="index.html">The University of Arizona B3 Project 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Clay Morrison, Colin Dawson, Alfredo Carillo, David Sidi.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

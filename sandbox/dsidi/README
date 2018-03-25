@@ -1,0 +1,10 @@
+(22 Mar 2014)
+===
+
+TO TEST THIS EVAL. CODE, TRY:
+
+  python b3_evaluation.py .
+
+This will run the code on the current directories csv files ending with `_b3' and `_gt'.
+
+This code is rough, and will be being refactored over the next few days.
